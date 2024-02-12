@@ -1,0 +1,12 @@
+{
+  "extends": ["config:base"],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "actionUpdate",
+      "semanticCommitType": "chore",
+      "separateMajorMinor": false
+    }
+  ]
+}
