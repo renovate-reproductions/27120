@@ -1,0 +1,17 @@
+name: CI
+on:
+  workflow_dispatch:
+
+jobs:
+  FileChanges:
+    runs-on: ubuntu-latest
+    outputs:
+      cdk: ${{ steps.filter.outputs.any }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            any:
+              - '**'
